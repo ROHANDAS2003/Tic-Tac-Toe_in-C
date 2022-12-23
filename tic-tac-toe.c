@@ -21,6 +21,44 @@ void printBoard()
     printf("\n\n");
 }
 
+int checkWin(){
+    if (board[1]==board[2] && board[2]==board[3])
+    {
+        return 1;
+    }
+    if (board[4]==board[5] && board[5]==board[6])
+    {
+        return 1;
+    }
+    if (board[7]==board[8] && board[8]==board[9])
+    {
+        return 1;
+    }
+    if (board[1]==board[4] && board[4]==board[7])
+    {
+        return 1;
+    }
+    if (board[2]==board[5] && board[5]==board[8])
+    {
+        return 1;
+    }
+    if (board[3]==board[6] && board[6]==board[9])
+    {
+        return 1;
+    }
+    if (board[1]==board[5] && board[5]==board[9])
+    {
+        return 1;
+    }
+    if (board[3]==board[5] && board[5]==board[7])
+    {
+        return 1;
+    }
+
+
+    return -1;
+}
+
 void main()
 {
     int player = 1, input, status = -1;
@@ -41,6 +79,15 @@ void main()
         }
             board[input] = mark;
         printBoard();
+
+        int result = checkWin();
+
+        if (result==1)
+        {
+            printf("player %d is the winner!!!\n\n", player);
+            return;
+        }
+    
         player++;
     }
 }
