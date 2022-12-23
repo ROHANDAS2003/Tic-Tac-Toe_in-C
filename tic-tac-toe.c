@@ -23,5 +23,19 @@ void printBoard()
 
 void main()
 {
+    int player = 1, input, status = -1;
     printBoard();
+
+    while (status==-1)
+    {
+        player = (player%2 == 0) ? 2 : 1;
+        char mark = (player == 1) ? 'X' : 'O';
+
+        printf("Enter number for player %d:  ", player);
+        scanf("%d", &input);
+
+            board[input] = mark;
+        printBoard();
+        player++;
+    }
 }
