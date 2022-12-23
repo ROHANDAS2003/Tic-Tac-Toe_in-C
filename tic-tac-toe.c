@@ -37,6 +37,7 @@ void main()
         if (input < 1 || input > 9)
         {
             printf("Invalid input\n");
+            player++;
         }
             board[input] = mark;
         printBoard();
