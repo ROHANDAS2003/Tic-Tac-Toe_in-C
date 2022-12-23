@@ -90,7 +90,14 @@ void main()
             printf("Invalid input\n");
             player++;
         }
+        if(board[input]=='X' || board[input]=='O'){
+            printf("This place is already filled\n");
+            player++;
+        }
+        else{
             board[input] = mark;
+        }
+        
         printBoard();
 
         int result = checkWin();
