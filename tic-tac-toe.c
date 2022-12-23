@@ -34,6 +34,10 @@ void main()
         printf("Enter number for player %d:  ", player);
         scanf("%d", &input);
 
+        if (input < 1 || input > 9)
+        {
+            printf("Invalid input\n");
+        }
             board[input] = mark;
         printBoard();
         player++;
