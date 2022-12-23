@@ -55,6 +55,19 @@ int checkWin(){
         return 1;
     }
 
+    int count = 0;
+    for (int i = 1; i <= 9; i++)
+    {
+        if (board[i]=='X' || board[i]=='O')
+        {
+            count++;
+        }
+    }
+    
+    if (count == 9)
+    {
+        return 0;
+    }
 
     return -1;
 }
@@ -85,6 +98,11 @@ void main()
         if (result==1)
         {
             printf("player %d is the winner!!!\n\n", player);
+            return;
+        }
+        else if (result==0)
+        {
+            printf("The match is draw!!!\n\n");
             return;
         }
     
